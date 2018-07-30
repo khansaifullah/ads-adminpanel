@@ -1,0 +1,142 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper add-padding">
+    <!-- Content Header (Page header) -->
+  <div class="content-header clearfix">
+<h2 class="pull-left"  style="color:#232f3e">
+Add Shift
+</h2>
+<div class="pull-right">
+<button type="submit" name="save" class="btn bg-blue" (click)="saveShift()" >
+<i class="fa fa-floppy-o"></i>
+Save
+</button>
+<button type="submit" name="save-continue" class="btn bg-blue" routerLink="/shifts" routerLinkActive="active" >
+  <i class="fa fa-arrow-left" aria-hidden="true"></i>
+Back
+</button>
+</div>
+</div>
+
+    <!-- Main content -->
+    <section class="content">
+      <!-- /.box -->
+          <!-- START CUSTOM TABS -->
+          <!-- Custom Tabs -->
+          <div class="nav-tabs-custom">
+            <div class="tab-content">
+              <div class="tab-pane active" id="tab_1">
+     <div class="row">
+            <div class="col-md-7">
+         <!-- Horizontal Form -->
+            <!-- form start -->
+            <form class="form-horizontal">
+              <div class="box-body">
+
+          <div class="form-group">
+            <label for="authorName" class="col-sm-2 control-label">Shift Title</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="title" placeholder="Title" name="title" [(ngModel)]="title">
+            </div>
+        </div>
+        <div class="form-group">
+          <div>
+              <label for="authorName" class="col-sm-2 control-label">Select Driver</label>
+          </div>
+
+          <select  [(ngModel)]="selectedDriver" (ngModelChange)="chkDriverName()" name="selectedDriver">
+            <option *ngFor="let d of drivers"  value={{d._id}}> {{d.name}} </option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="authorName" class="col-sm-2 control-label">Vehicle #</label>
+            <div class="col-sm-10">
+              <input type="text" class="form-control" id="vehicle" placeholder="Vehicle Number Here" name="vehicle" [(ngModel)]="vehicle">
+           </div>
+        </div>
+        <div class="form-group">
+            <label for="authorName" class="col-sm-2 control-label" style= "max-width: 20%;">Start Location</label>
+            <button   (click)="showStartLocMap($event)" >
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Show/Hide Map
+            </button>
+            <div [hidden]="!openStartLocMap" id="map" class="google-map"></div>
+        </div>
+        <div class="form-group">
+            <label for="authorName" class="col-sm-2 control-label" style= "max-width: 20%;">End Location</label>
+            <button  (click)="showEndLocMap($event)"  >
+              <i class="fa fa-map-marker" aria-hidden="true"></i>
+              Show/Hide Map
+            </button>
+            <div [hidden]="!openEndLocMap" id="map2" class="google-map"></div>
+        </div>
+        <!-- <div class="form-group">
+            <label for="authorName" class="col-sm-2 control-label" style= "max-width: 20%;">Pick Up Time</label>
+            <input atp-time-picker value="19:00" [(ngModel)]="startTime" name="startTime" />
+        </div>
+        <div class="form-group">
+            <label for="authorName" class="col-sm-2 control-label" style= "max-width: 20%;">Drop Off Time</label>
+            <input atp-time-picker value="19:00" [(ngModel)]="endTime" name="endTime" />
+        </div> -->
+
+
+        <!-- <div class="form-group">
+        <label class="col-sm-2 control-label">Status</label>
+                  <div class="col-sm-10">
+          <div class="col-sm-3">
+          <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadiosT" id="optionsRadios1" value="option1" checked="">
+                      Published
+                    </label>
+                  </div>
+          </div>
+          <div class="col-sm-3">
+                  <div class="radio">
+                    <label>
+                      <input type="radio" name="optionsRadiosT" id="optionsRadios2" value="option2">
+                      Unpublished
+                    </label>
+                  </div>
+          </div>
+          </div>
+                </div> -->
+             </div>
+            </form>
+          <!-- /.box -->
+                </div>
+        </div>
+          <!-- /.row -->
+              </div>
+            </div>
+            <!-- /.tab-content -->
+          </div>
+          <!-- nav-tabs-custom -->
+      <!-- END CUSTOM TABS -->
+
+     </section>
+    <!-- /.content -->
+  </div>
+
+
+  <popup  #confirmStartLocMarkerPopup (confirmClick)="confirmStartLoc()">
+      <h2>Set Title For Starting Location</h2>
+    <input   type="text"  class ="popup-inputs" placeholder="Title" name="startLocTitle" [(ngModel)]="startLocTitle" >
+      <br>
+    <input   type="text"  class ="popup-inputs" placeholder="Lat" name="startLocLat" [(ngModel)]="startLocLat" readonly>
+      <br>
+    <input   type="text" class ="popup-inputs" placeholder="Long " name="startLocLong" [(ngModel)]="startLocLong" readonly>
+      <br>
+
+  </popup>
+  <popup  #confirmEndLocMarkerPopup (confirmClick)="confirmEndLoc()">
+      <h2>Set Title For Ending Location</h2>
+      <input   type="text" class ="popup-inputs"  placeholder="Title" name="endLocTitle" [(ngModel)]="endLocTitle" >
+      <br>
+      <input   type="text" class ="popup-inputs" placeholder="Lat" name="endLocLat" [(ngModel)]="endLocLat" readonly>
+      <br>
+      <input   type="text" class ="popup-inputs" placeholder="Long " name="endLocLong" [(ngModel)]="endLocLong" readonly>
+       <br>
+
+  </popup>

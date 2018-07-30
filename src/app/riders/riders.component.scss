@@ -1,0 +1,36 @@
+input[type=text], input[type=password],input[type=number] {
+  width: 73%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  display: inline-block;
+  border: 1px solid #ccc;
+  box-sizing: border-box;
+}
+textarea {
+width: 73%;
+padding: 12px 20px;
+margin: 8px 0;
+display: inline-block;
+border: 1px solid #ccc;
+box-sizing: border-box;
+}
+.button {
+background-color: #232f3e;
+border: none;
+color: white;
+padding: 13px 18px;
+text-align: center;
+text-decoration: none;
+display: inline-block;
+font-size: 12px;
+margin: 4px 2px;
+cursor: pointer;
+font-weight: bold;
+
+}
+
+.add-padding{
+padding-left: 1%;
+padding-right: 1%;
+padding-top: 1%;
+}

@@ -1,0 +1,67 @@
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper add-padding">
+  <!-- Content Header (Page header) -->
+<div class="content-header ">
+<h1 class="pull-left">
+Users
+</h1>
+</div>
+
+  <!-- Main content -->
+  <section class="content">
+      <div class="form-horizontal">
+      <div class="panel-group">
+      <div class="panel panel-default">
+      <div class="panel-body">
+          <div >
+      <table id="example" class="table table-striped table-bordered" cellspacing="0" >
+
+        <thead >
+          <tr >
+          <th  > # </th>
+          <th  >User Name</th>
+          <th  >Email</th>
+          <th  >Device</th>
+          <th  >Type</th>
+          </tr>
+        </thead>
+          <tbody>
+
+              <tr *ngFor="let user of users; let i = index">
+                  <td>{{i + 1}}</td>
+                  <td >-</td>
+                  <td >{{user.email}}</td>
+                  <td >Iphone</td>
+                  <td >Member</td>
+              </tr>
+            <!-- <tr >
+                <td >Sajid</td>
+                <td >sajid@gmail.com</td>
+                <td >Iphone</td>
+                <td >Admin</td>
+            </tr>
+            <tr >
+              <td >Umer</td>
+                <td >sajid@gmail.com</td>
+                <td >Andriod</td>
+                <td >Admin</td>
+            </tr>
+            <tr >
+                <td >Nadeem</td>
+                <td >sajid@gmail.com</td>
+                <td >Iphone</td>
+                <td >Admin</td>
+            </tr> -->
+          </tbody>
+
+
+      </table>
+      </div>
+      </div>
+      </div>
+          </div>
+      </div>
+   </section>
+  <!-- /.content -->
+</div>
+<!-- /.content-wrapper -->

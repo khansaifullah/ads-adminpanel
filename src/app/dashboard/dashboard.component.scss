@@ -1,0 +1,84 @@
+.home-wrapper{
+
+	height:auto;
+	padding-left: 5%;
+	text-align:center;
+  color:#007872;
+  // background: blue;
+  // background-color: red;
+  // width: 100%;
+}
+
+.features-wrapper{
+
+	/* height: 30%;
+    width: 20%; 0 width - change this with JavaScript */
+	color:#007872;
+	padding:35px 10px;
+	margin:5px 5px;
+	border-style: solid;
+	border-width: 2px;
+	border-color:turquoise;
+	background-color: white;
+	/* //float:left; */
+	border-radius: 5px;
+	/* //top: 0; */
+	text-align:center;
+  margin-bottom:10px;
+  width: 20%;
+  float: left;
+  position: static;
+  height: 150px;
+}
+.home-left{
+	height: 100%;
+  // width: 50%;
+	// float:left;
+}
+.home-right{
+	height: 100%;
+  width: 50%;
+	float:left;
+}
+
+.map-wrapper{
+	height: 18%;
+  width: 83%;
+	color:white;
+	// padding:0% 0%;
+	margin:0% 17%;
+	border-style: solid;
+	border-width: 2px;
+	border-color:#4CAFA3;
+	// background-color: #4CAFA3;
+	 float:right;
+  border-radius: 5px;
+}
+
+.chart-wrapper{
+	height: 18%;
+  width: 83%;
+	color:white;
+	// padding:0% 0%;
+	 margin:2% 0%;
+	border-style: solid;
+	border-width: 2px;
+	border-color:#4CAFA3;
+	// background-color: #4CAFA3;
+	float:left;
+  border-radius: 5px;
+}
+agm-map {
+	border-style: solid;
+	border-width: 3px;
+	border-color:turquoise;
+    height: 300px;
+	width: 450px;
+	float:right;
+	margin: auto;
+	/* //padding-right:5px; */
+	border-radius: 5px;
+    }
+    #map {
+      height: 500px;
+  }

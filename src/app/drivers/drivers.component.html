@@ -1,0 +1,100 @@
+
+  <!-- Content Wrapper. Contains page content -->
+  <div class="content-wrapper add-padding">
+      <!-- Content Header (Page header) -->
+    <div class="content-header clearfix">
+  <h2 class="pull-left"  style="color:#232f3e">
+  Drivers
+  </h2>
+  <div class="pull-right">
+  <a  routerLink="/driver" routerLinkActive="active"  class="btn bg-blue">
+    <i class="fa fa-plus-square"></i>
+    Add new
+  </a>
+
+  </div>
+  </div>
+
+      <!-- Main content -->
+      <section class="content">
+          <!-- <div class="panel-group"> -->
+          <!-- <div class="panel panel-default"> -->
+          <!-- <div class="panel-body"> -->
+              <!-- <div > -->
+          <table id="example" class="table table-striped table-bordered" cellspacing="0" >
+
+          <thead >
+      <tr >
+      <!-- <th  style="text-align:center;" ><input id="selectAll" class="minimal" type="checkbox"></th> -->
+      <th  > # </th>
+      <th  >User Name</th>
+      <th  >Email</th>
+      <th  >Phone # </th>
+       <th >Panic </th>
+      <th>Options </th>
+
+      </tr>
+      </thead>
+              <tbody>
+                  <tr *ngFor="let user of users; let i = index">
+
+                      <!-- <td style="text-align:center" ><input type="checkbox" class="minimal" value="5" ></td> -->
+                      <td>{{i + 1}}</td>
+                      <td >{{user.name}} </td>
+                      <td >{{user.email}}</td>
+                      <td >{{user.phone}}</td>
+                      <td >
+
+                      <!-- {{user.panic}} -->
+                        <div *ngIf="user.panic" style="color:red;">In Panic</div>
+                        <div *ngIf="!user.panic">Normal</div>
+                      </td>
+                      <td>
+                        <i class="fa fa-pencil-square-o" aria-hidden="true" (click)="confirmEdit(user)">&nbsp;&nbsp;</i>
+                        <i class="fa fa-trash-o" aria-hidden="true" (click)="confirmDelete(user)"></i>
+                      </td>
+                    </tr>
+
+             <!-- <tr >
+                  <td style="text-align:center" ><input type="checkbox" class="minimal" value="5" ></td>
+                  <td >Sajid</td>
+                  <td >“Don't cry because it's over, smile because it happened.” </td>
+                  <td ><span class="badge bg-green">on</span></td>
+              </tr>
+         <tr >
+                  <td style="text-align:center" ><input type="checkbox" class="minimal" value="5" ></td>
+                  <td >Sajid</td>
+                  <td >“Don't cry because it's over, smile because it happened.” </td>
+                  <td ><span class="badge bg-red">off</span></td>
+              </tr>
+        <tr >
+                  <td style="text-align:center" ><input type="checkbox" class="minimal" value="5" ></td>
+                  <td >Sajid</td>
+                  <td >“Don't cry because it's over, smile because it happened.” </td>
+                  <td ><span class="badge bg-green">on</span></td>
+              </tr> -->
+              </tbody>
+
+
+          </table>
+          <!-- </div> -->
+          <!-- </div> -->
+          <!-- </div> -->
+              <!-- </div> -->
+          <!-- </div> -->
+       </section>
+      <!-- /.content -->
+    </div>
+    <!-- /.content-wrapper -->
+
+    <popup #deletePopup (confirmClick)="deleteDriver()">
+      <div>Are you sure, You want to Delete Driver ?</div>
+    </popup>
+
+
+    <popup  #editPopup (confirmClick)="editDriver()">
+        <input   type="text"  placeholder="Name" name="name" [(ngModel)]="name" >
+        <input   type="text"  placeholder="Email" name="author" [(ngModel)]="email" >
+        <input   type="text"  placeholder="Phone #" name="author" [(ngModel)]="phone" >
+    </popup>
+

@@ -1,0 +1,32 @@
+<div class="content-wrapper add-padding">
+  <div class="content-header clearfix">
+  <h2 class="pull-left" style="color:#232f3e; ">
+  Live Tracking
+  </h2>
+  </div>
+  <div>
+      <!-- <input type="text" [(ngModel)]="searchText" name ="inputField">
+      <div *ngFor = "let item of drivers | filter : searchText" >
+        <p>
+          {{item.name}}
+        </p>
+      </div> -->
+      <!-- <input [(ngModel)]="searchText" name ="inputField" placeholder="search text goes here">
+        <ul>
+          <li *ngFor="let driver of drivers | filter : searchText">
+            {{driver.name}}
+          </li>
+        </ul> -->
+        <!-- <div class="form-group"> -->
+            <div>
+                <label for="authorName" class="col-sm-2 control-label">Select Driver</label>
+            </div>
+
+            <select  [(ngModel)]="selectedDriver" (ngModelChange)="chkDriverName()" name="selectedDriver">
+              <option *ngFor="let d of drivers"  value={{d._id}}> {{d.name}} </option>
+            </select>
+          <!-- </div> -->
+  </div>
+  <!-- <input id="pac-input" class="controls" type="text" placeholder="Search Box"> -->
+  <div id="mapToUpdate" class="google-map"></div>
+</div>
